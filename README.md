@@ -1,2 +1,2 @@
 # HomePage
-Created a homepage using html, css and javasccript
+Created a homepage using html, css and javascript
