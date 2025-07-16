@@ -21,36 +21,32 @@
     </div>
 
     <!-- Navbar -->
-    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-    <!-- Left side: Platform, Solutions -->
-    <div class="hidden lg:flex space-x-6">
-        <a href="#" class="text-gray-300 hover:text-white navbar-link">Platform <span class="ml-1">↓</span></a>
-        <a href="#" class="text-gray-300 hover:text-white navbar-link">Solutions <span class="ml-1">↓</span></a>
-        <a href="#" class="text-gray-300 hover:text-white navbar-link">Enterprise</a>
+    <!-- Navbar -->
+<nav class="container mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-y-4">
+  
+  <!-- Left side nav links -->
+  <div class="w-full lg:w-auto flex flex-col sm:flex-row lg:flex-row gap-2 sm:gap-4 lg:gap-6 text-center sm:text-left items-center sm:items-start">
+    <a href="#" class="text-gray-300 hover:text-white navbar-link">Platform <span class="ml-1">↓</span></a>
+    <a href="#" class="text-gray-300 hover:text-white navbar-link">Solutions <span class="ml-1">↓</span></a>
+    <a href="#" class="text-gray-300 hover:text-white navbar-link">Enterprise</a>
+  </div>
+
+  <!-- Center logo -->
+  <div class="w-full lg:w-auto flex justify-center">
+    <div class="text-4xl font-bold animated-logo-text animated-logo-text-glow">
+      HEX
     </div>
+  </div>
 
-    <!-- Center: HEX Logo -->
-    <div class="flex items-center justify-center lg:flex-grow">
-  <div class="text-4xl font-bold animated-logo-text animated-logo-text-glow">
-  HEX
-</div>
-
-</div>
-
-
-    <!-- Right side: Enterprise, Resources, Pricing, Log in, Get started -->
-    <div class="flex items-center space-x-6">
-        <div class="hidden lg:flex space-x-6">
-            
-            <a href="#" class="text-gray-300 hover:text-white navbar-link">Resources <span class="ml-1">↓</span></a>
-            <a href="#" class="text-gray-300 hover:text-white navbar-link">Pricing</a>
-        </div>
-        <a href="#" class="text-gray-300 hover:text-white" onclick="openModal()">Log in</a>
-
-        
-        <button class="btn-get-started text-white px-6 py-2 rounded-lg font-semibold">Get started</button>
-    </div>
+  <!-- Right side nav links -->
+  <div class="w-full lg:w-auto flex flex-col sm:flex-row lg:flex-row items-center gap-2 sm:gap-4 lg:gap-6 text-center sm:text-right justify-center sm:justify-end">
+    <a href="#" class="text-gray-300 hover:text-white navbar-link">Resources <span class="ml-1">↓</span></a>
+    <a href="#" class="text-gray-300 hover:text-white navbar-link">Pricing</a>
+    <a href="#" class="text-gray-300 hover:text-white" onclick="openModal()">Log in</a>
+    <button class="btn-get-started text-white px-6 py-2 rounded-lg font-semibold">Get started</button>
+  </div>
 </nav>
+
 <!-- Auth Modal -->
 <div id="authModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
   <div class="bg-[#2a2a4a] p-8 rounded-lg w-full max-w-sm text-white relative">
