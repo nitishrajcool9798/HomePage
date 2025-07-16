@@ -6,11 +6,12 @@ body {
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-.animated-logo-text-glow {
-  text-shadow: 0 0 8px rgba(139, 226, 250, 0.6), 0 0 15px rgba(167, 139, 250, 0.5);
+
+.animated-logo-glow {
+  text-shadow: 0 0 8px rgba(168, 85, 247, 0.6),
+               0 0 12px rgba(236, 72, 153, 0.5),
+               0 0 20px rgba(34, 211, 238, 0.3);
 }
-
-
 
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
