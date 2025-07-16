@@ -21,29 +21,46 @@
     </div>
 
     <!-- Navbar -->
-    <nav class="w-full px-4 py-4 flex flex-wrap justify-between items-center gap-x-4 gap-y-2 text-sm">
+   <nav class="w-full px-4 py-4 flex flex-wrap justify-between items-center gap-x-4 gap-y-2 text-sm">
   
   <!-- Left: Platform, Solutions, Enterprise -->
   <div class="flex items-center space-x-4">
-    <a href="#" class="text-gray-300 hover:text-white">Platform ↓</a>
-    <a href="#" class="text-gray-300 hover:text-white">Solutions ↓</a>
-    <a href="#" class="text-gray-300 hover:text-white">Enterprise</a>
+    <a href="#" class="group relative text-gray-300 hover:text-violet-500">
+  Platform ↓
+  <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-violet-500 transition-all duration-300 group-hover:w-full"></span>
+</a>
+<a href="#" class="group relative text-gray-300 hover:text-violet-500">
+  Solution ↓
+  <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-violet-500 transition-all duration-300 group-hover:w-full"></span>
+</a>
+<a href="#" class="group relative text-gray-300 hover:text-violet-500">
+  Enterprise
+  <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-violet-500 transition-all duration-300 group-hover:w-full"></span>
+</a>
   </div>
 
   <!-- Center: Logo -->
-  <div class="text-4xl font-extrabold text-white mx-auto">
-    HEX
-  </div>
+  <div class="text-4xl font-extrabold mx-auto animated-logo-text animated-logo-glow">
+  HEX
+</div>
+
 
   <!-- Right: Resources, Pricing, Log in, Get started -->
   <div class="flex items-center space-x-4">
-    <a href="#" class="text-gray-300 hover:text-white">Resources ↓</a>
-    <a href="#" class="text-gray-300 hover:text-white">Pricing</a>
+    <a href="#" class="group relative text-gray-300 hover:text-violet-500">
+  Resources ↓
+  <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-violet-500 transition-all duration-300 group-hover:w-full"></span>
+</a>
+<a href="#" class="group relative text-gray-300 hover:text-violet-500">
+  Pricing
+  <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-violet-500 transition-all duration-300 group-hover:w-full"></span>
+</a>
+
+    <!-- <a href="#" class="text-gray-300 hover:text-violet">Pricing</a> -->
     <a href="#" onclick="openModal()" class="text-gray-300 hover:text-white">Log in</a>
     <button class="border border-purple-500 text-white px-4 py-1 rounded hover:bg-purple-600 transition text-sm font-semibold">Get started</button>
   </div>
 </nav>
-
 <!-- Auth Modal -->
 <div id="authModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
   <div class="bg-[#2a2a4a] p-8 rounded-lg w-full max-w-sm text-white relative">
