@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hex - Go deeper than dashboards</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS will go here (or in a separate file) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#1a1a2e]">
+    <!-- Top Announcement Bar -->
+    <div class="bg-[#2a2a4a] text-center py-2 text-sm">
+        <p>
+            <marquee direction="left">Announcing Hex's $70M Series C: doubling down on the new era of agentic analytics ✨
+            <span class="ml-4 text-purple-400">It's just "Hex"! Not "HEX" or "Hex dot tech" →</span>
+            <span class="ml-4 text-gray-400">We're hiring!</span></marquee>
+            
+        </p>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <!-- Left side: Platform, Solutions -->
+    <div class="hidden lg:flex space-x-6">
+        <a href="#" class="text-gray-300 hover:text-white navbar-link">Platform <span class="ml-1">↓</span></a>
+        <a href="#" class="text-gray-300 hover:text-white navbar-link">Solutions <span class="ml-1">↓</span></a>
+        <a href="#" class="text-gray-300 hover:text-white navbar-link">Enterprise</a>
+    </div>
+
+    <!-- Center: HEX Logo -->
+    <div class="flex items-center justify-center lg:flex-grow">
+  <div class="text-4xl font-bold animated-logo-text animated-logo-text-glow">
+  HEX
+</div>
+
+</div>
+
+
+    <!-- Right side: Enterprise, Resources, Pricing, Log in, Get started -->
+    <div class="flex items-center space-x-6">
+        <div class="hidden lg:flex space-x-6">
+            
+            <a href="#" class="text-gray-300 hover:text-white navbar-link">Resources <span class="ml-1">↓</span></a>
+            <a href="#" class="text-gray-300 hover:text-white navbar-link">Pricing</a>
+        </div>
+        <a href="#" class="text-gray-300 hover:text-white" onclick="openModal()">Log in</a>
+
+        
+        <button class="btn-get-started text-white px-6 py-2 rounded-lg font-semibold">Get started</button>
+    </div>
+</nav>
+<!-- Auth Modal -->
+<div id="authModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+  <div class="bg-[#2a2a4a] p-8 rounded-lg w-full max-w-sm text-white relative">
+    <button onclick="closeModal()" class="absolute top-2 right-3 text-white text-xl">✕</button>
+
+    <div id="formContainer">
+      <!-- Login Form -->
+      <form id="loginForm" onsubmit="handleLogin(event)" class="space-y-4">
+        <h2 class="text-2xl font-semibold text-center">Login</h2>
+        <input type="text" id="loginUsername" placeholder="Username" required class="w-full p-2 rounded bg-[#1a1a2e] border border-gray-600" />
+        <input type="password" id="loginPassword" placeholder="Password" required class="w-full p-2 rounded bg-[#1a1a2e] border border-gray-600" />
+        <button type="submit" class="w-full py-2 rounded bg-purple-600 hover:bg-purple-700 font-semibold">Log In</button>
+        <p id="loginMsg" class="text-sm text-center text-red-400"></p>
+        <p class="text-sm text-center mt-2">Don't have an account? <span class="text-blue-400 cursor-pointer" onclick="showSignup()">Sign up</span></p>
+      </form>
+
+      <!-- Signup Form -->
+      <form id="signupForm" onsubmit="handleSignup(event)" class="space-y-4 hidden">
+        <h2 class="text-2xl font-semibold text-center">Sign Up</h2>
+        <input type="text" id="signupUsername" placeholder="Username" required class="w-full p-2 rounded bg-[#1a1a2e] border border-gray-600" />
+        <input type="password" id="signupPassword" placeholder="Password" required class="w-full p-2 rounded bg-[#1a1a2e] border border-gray-600" />
+        <input type="password" id="signupConfirm" placeholder="Confirm Password" required class="w-full p-2 rounded bg-[#1a1a2e] border border-gray-600" />
+        <button type="submit" class="w-full py-2 rounded bg-green-600 hover:bg-green-700 font-semibold">Sign Up</button>
+        <p id="signupMsg" class="text-sm text-center text-red-400"></p>
+        <p class="text-sm text-center mt-2">Already have an account? <span class="text-blue-400 cursor-pointer" onclick="showLogin()">Login</span></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<style>
+    /* Add this to your existing style.css or within the style tags in HTML */
+    .gradient-text-hex {
+        background: linear-gradient(to right, #e0b0ff, #a78bfa); /* Lighter purple gradient for HEX logo */
+        /* -webkit-background-clip: text; */
+        -webkit-text-fill-color: transparent;
+        font-size: 2.5rem; /* Slightly larger font for the logo */
+        font-weight: 700; /* Bold font for the logo */
+    }
+    .btn-get-started {
+        background-color: transparent; /* Transparent background */
+        border: 1px solid #a78bfa; /* Light purple border */
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+    .btn-get-started:hover {
+        background-color: rgba(167, 139, 250, 0.1); /* Slight purple tint on hover */
+        border-color: #c084fc; /* Slightly brighter border on hover */
+    }
+    
+</style>
+
+
+    <!-- Hero Section -->
+    <header class="container mx-auto px-6 py-16 lg:flex lg:items-center lg:justify-between">
+        <div class="lg:w-1/2 mb-10 lg:mb-0">
+            <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight animated-gradient-text">
+  Go deeper than <br> dashboards
+</h1>
+
+            <p class="mt-6 text-lg text-gray-300 max-w-lg">
+                Hex is the AI-powered analytics workspace built for teams driving
+                faster answers and better decisions.
+            </p>
+            <div class="mt-10 flex space-x-4">
+                <button class="btn-primary text-white px-8 py-3 rounded-lg font-semibold flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    Get started
+                </button>
+                <button class="btn-secondary text-white px-8 py-3 rounded-lg font-semibold">
+                    Request a demo
+                </button>
+            </div>
+        </div>
+        <div class="lg:w-1/2 flex justify-center lg:justify-end relative">
+    <div class="relative w-full max-w-3xl h-[340px] lg:h-[340px] rounded-lg overflow-hidden shadow-lg">
+
+   <video controls autoplay muted loop playsinline class="w-full h-full object-cover">
+  <source src="hero-video.mp4" type="video/mp4">
+
+  Your browser does not support the video tag.
+</video>
+
+
+    <button id="playBtn" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 hover:bg-opacity-30 transition">
+        <svg class="w-20 h-20 text-white" fill="currentColor" viewBox="0 0 84 84" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="42" cy="42" r="42" fill="rgba(201, 22, 217, 0.4)" />
+            <polygon points="34,24 60,42 34,60" fill="white"/>
+        </svg>
+    </button>
+</div>
+
+</div>
+
+
+    </header>
+
+    <!-- Trusted By Section -->
+    <section class="bg-[#1a1a2e] py-16 text-center">
+  <p class="text-pink-300 text-sm uppercase tracking-widest mb-12">
+    — TRUSTED BY LEADING DATA COMPANIES —
+  </p>
+
+  <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 max-w-6xl mx-auto">
+    <img src="images/reddit.png" alt="Reddit" class="h-8 grayscale brightness-200">
+    <img src="images/Notion.png" alt="Notion" class="h-8 grayscale brightness-200">
+    <img src="images/anthropic.png" alt="Anthropic" class="h-8 grayscale brightness-200">
+    <img src="images/seatgeek.png" alt="SeatGeek" class="h-8 grayscale brightness-200">
+    <img src="images/clickup.png" alt="ClickUp" class="h-8 grayscale brightness-200">
+    <img src="images/algolia.png" alt="Algolia" class="h-8 grayscale brightness-200">
+    <img src="images/alltrails.png" alt="AllTrails" class="h-8 grayscale brightness-200">
+    <img src="images/maodernTreasury.png" alt="Modern Treasury" class="h-8 grayscale brightness-200">
+    <img src="images/ramp.png" alt="Ramp" class="h-8 grayscale brightness-200">
+    <img src="images/sedgwick.png" alt="Sedgwick" class="h-8 grayscale brightness-200">
+    <img src="images/chesapeake.png" alt="Chesapeake Energy" class="h-8 grayscale brightness-200">
+    <img src="images/calendly.png" alt="Calendly" class="h-8 grayscale brightness-200">
+    <img src="images/stubhub.png" alt="StubHub" class="h-8 grayscale brightness-200">
+    <img src="images/greenhouse.png" alt="Greenhouse" class="h-8 grayscale brightness-200">
+    <img src="images/om1.png" alt="OM1" class="h-8 grayscale brightness-200">
+    <img src="images/paytronix.png" alt="Paytronix" class="h-8 grayscale brightness-200">
+    <img src="images/huckberry.png" alt="Huckberry" class="h-8 grayscale brightness-200">
+    <img src="images/duolingo.png" alt="Duolingo" class="h-8 grayscale brightness-200">
+  </div>
+</section>
+
+
+    <!-- JavaScript will go here (or in a separate file) -->
+    <script src="script.js"></script>
+</body>
+</html>
